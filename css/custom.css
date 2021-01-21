@@ -1,0 +1,437 @@
+/******* Reset margin, padding *********/
+/* line 7, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 13, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+body {
+  background: #333333;
+  color: #ffffff;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+
+/******* Main app style *********/
+/* line 21, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp {
+  padding: 40px 10px;
+  margin: 0 auto;
+  width: 800px;
+  max-width: 100%;
+  text-align: center;
+  /******* Title and subtitle *********/
+  /******* Tabs settings *********/
+  /******* Tabs content settings *********/
+}
+
+/* line 28, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp img:not(.loader) {
+  max-width: 100%;
+}
+
+/* line 33, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #head-page {
+  margin-bottom: 30px;
+}
+
+/* line 35, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #head-page h1 {
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 20px;
+}
+
+/* line 42, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs {
+  display: flex;
+  justify-content: center;
+  color: #333333;
+}
+
+/* line 47, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs div {
+  cursor: pointer;
+  padding: 15px 25px;
+  margin: 0 10px;
+  border-top: 2px solid #eeeeee;
+  transition: all 0.3s;
+  background: #ffffff;
+  position: relative;
+}
+
+/* line 56, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs div:before, #stripapp #tabs div:after {
+  content: '';
+  background: #ffffff;
+  position: absolute;
+  top: -2px;
+  width: 10px;
+  height: 100%;
+  transform: skew(-5deg, 0deg);
+  border-top: 2px solid #eeeeee;
+  transition: all 0.3s;
+}
+
+/* line 68, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs div:before {
+  left: -4px;
+  border-left: 2px solid #eeeeee;
+}
+
+/* line 73, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs div:after {
+  right: -6px;
+  border-right: 2px solid #eeeeee;
+}
+
+/* line 78, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs div:hover, #stripapp #tabs div.active {
+  color: #ffffff;
+  background: #2874a6;
+}
+
+/* line 82, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs div:hover:before, #stripapp #tabs div:hover:after, #stripapp #tabs div.active:before, #stripapp #tabs div.active:after {
+  content: '';
+  background: #2874a6;
+}
+
+/* line 91, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content {
+  background: #ffffff;
+  color: #333333;
+  border: 2px solid #000000;
+  padding: 25px 35px;
+  margin-bottom: 20px;
+  box-shadow: #000000 10px 10px 2px;
+  position: relative;
+  top: -2px;
+  /******* Design for the form *********/
+  /******* Design for buttons *********/
+  /******* Gallery list strip *********/
+}
+
+/* line 101, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* line 105, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview {
+  display: inline-block;
+  margin-bottom: 10px;
+  position: relative;
+  /******* For hover on image purpose *********/
+}
+
+/* line 111, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  /******* Top and bottom lines *********/
+  /******* Right and left lines *********/
+}
+
+/* line 121, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview span:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+/* line 125, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview span:nth-child(2) {
+  transform: rotate(180deg);
+}
+
+/* line 130, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview span:nth-child(1):before, #stripapp #tabs-content figure .img-preview span:nth-child(2):before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #eeeeee;
+}
+
+/* line 141, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview span:nth-child(3) {
+  transform: rotate(0deg);
+}
+
+/* line 145, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview span:nth-child(4) {
+  transform: rotate(180deg);
+}
+
+/* line 150, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview span:nth-child(3):before, #stripapp #tabs-content figure .img-preview span:nth-child(4):before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: #eeeeee;
+}
+
+/* line 165, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview:hover span:nth-child(1):before, #stripapp #tabs-content figure .img-preview:hover span:nth-child(2):before {
+  animation: animate 4s linear infinite;
+}
+
+/* line 170, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview:hover span:nth-child(3):before, #stripapp #tabs-content figure .img-preview:hover span:nth-child(4):before {
+  animation: animateside 4s linear infinite;
+}
+
+/* line 176, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure .img-preview:hover img:not(.loader) {
+  box-shadow: #333333 2px 2px 4px;
+}
+
+/* line 182, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content figure img:not(.loader) {
+  border: 2px solid #333333;
+  background: #333333;
+  border: #ffffff 2px 2px 5px;
+  transition: all 0.3s;
+}
+
+/* line 191, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content #strip-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* line 196, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content #strip-form input {
+  padding: 10px;
+  background: #00FFFF;
+  border: none;
+  border-bottom: 2px solid #333333;
+  margin-right: 8px;
+}
+
+/* line 206, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content .btn {
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  background: #2874a6;
+  border: 2px solid #333333;
+  transition: all 0.3s;
+  padding: 8px 10px;
+}
+
+/* line 214, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content .btn:hover {
+  color: #333333;
+  background: #00FFFF;
+}
+
+/* line 220, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content .titles h2 {
+  margin-bottom: 20px;
+}
+
+/* line 224, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content .strip-part {
+  margin-bottom: 30px;
+}
+
+/* line 229, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content #gallery-strip #list-strip {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* line 233, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#stripapp #tabs-content #gallery-strip #list-strip div {
+  width: 33.3333333%;
+  padding: 0 5px;
+}
+
+/******* Lightbox image *********/
+/* line 243, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+}
+
+/* line 253, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure {
+  position: absolute;
+  height: auto;
+  max-height: 100vh;
+  overflow-y: auto;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  background: #000000;
+  border: 4px solid #ffffff;
+}
+
+/* line 265, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure figcaption {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* line 270, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure #prev, #modal-strip figure #next {
+  background: rgba(0, 0, 0, 0.5);
+  width: 25px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+/* line 277, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure #prev div, #modal-strip figure #next div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #ffffff;
+  transform: translate(-50%, -50%);
+  transition: all .4s ease-out;
+}
+
+/* line 284, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure #prev div span, #modal-strip figure #next div span {
+  display: block;
+  font-size: 35px;
+  transition: all .4s ease-out;
+}
+
+/* line 292, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure #prev {
+  left: 0;
+}
+
+/* line 295, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure #prev:hover div span {
+  transform: translateX(-3px);
+}
+
+/* line 301, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure #next {
+  right: 0;
+}
+
+/* line 304, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip figure #next:hover div span {
+  transform: translateX(3px);
+}
+
+/* line 311, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip div.btn-close {
+  position: absolute;
+  height: 38px;
+  width: 40px;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  padding-top: 4px;
+  padding-bottom: 0;
+  color: #333333;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 24px;
+  transition: all .4s ease-out;
+  z-index: 99;
+}
+
+/* line 331, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+#modal-strip div.btn-close:hover {
+  color: #2874a6;
+  transform: rotate(360deg);
+}
+
+/******* Responsive design part *********/
+@media all and (max-width: 768px) {
+  /******* Main app style *********/
+  /* line 342, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+  #stripapp {
+    /******* Tabs content settings *********/
+  }
+  /* line 345, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+  #stripapp #tabs-content {
+    /******* Gallery list strip *********/
+    /******* Design for the form *********/
+  }
+  /* line 348, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+  #stripapp #tabs-content #gallery-strip #list-strip div {
+    width: 50%;
+    padding: 0 5px;
+  }
+  /* line 357, C:/Users/Wadm/Desktop/vuestrip/sass/custom.scss */
+  #stripapp #tabs-content #strip-form input {
+    padding: 4px;
+  }
+}
+
+/******* Animation parts *********/
+@keyframes animate {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+    width: 0;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+    width: 100%;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+    width: 0;
+  }
+}
+
+@keyframes animateside {
+  0% {
+    transform: scaleY(0);
+    transform-origin: left;
+    height: 0;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: left;
+    height: 100%;
+  }
+  50.1% {
+    transform: scaleY(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: right;
+    height: 0;
+  }
+}
+
+/*# sourceMappingURL=custom.css.map */

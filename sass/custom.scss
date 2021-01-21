@@ -1,0 +1,415 @@
+@charset 'UTF-8';
+
+// 1. Colors import
+@import 'colors';
+
+/******* Reset margin, padding *********/
+*{
+	margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+	background: $prim_color;
+    color: $white;
+    font-family: 'Nunito', Arial, sans-serif;
+}
+
+
+/******* Main app style *********/
+#stripapp{
+	padding:40px 10px;
+    margin:0 auto;
+    width:800px;
+    max-width:100%;
+    text-align: center;
+
+	img:not(.loader){
+		max-width:100%;
+	}
+
+	/******* Title and subtitle *********/
+	#head-page{
+		margin-bottom:30px;
+		h1{
+			font-family: 'Dancing Script', cursive;
+			margin-bottom:20px;
+		}
+	}
+
+	/******* Tabs settings *********/
+	#tabs{
+		display: flex;
+		justify-content: center;
+		color:$prim_color;
+		
+		div{
+			cursor:pointer;
+			padding:15px 25px;
+			margin:0 10px;
+			border-top:2px solid $second_color;
+			transition:all 0.3s;
+			background: $white;
+			position:relative;
+			
+			&:before, &:after{
+				content:'';
+				background: $white;
+				position:absolute;
+				top:-2px;
+				width:10px;
+				height:100%;
+				transform: skew(-5deg, 0deg);
+				border-top:2px solid $second_color;
+				transition:all 0.3s;
+			}
+			
+			&:before{
+				left:-4px;
+				border-left:2px solid $second_color;
+			}
+			
+			&:after{
+				right:-6px;
+				border-right:2px solid $second_color;
+			}
+			
+			&:hover, &.active{
+				color: $white;
+				background: $fourth_color;
+				
+				&:before, &:after{
+					content:'';
+					background: $fourth_color;
+				}
+			}
+		}
+	}
+	
+	/******* Tabs content settings *********/
+	#tabs-content{
+		background: $white;
+		color:$prim_color;
+		border:2px solid $black;
+		padding:25px 35px;
+		margin-bottom: 20px;
+		box-shadow: $black 10px 10px 2px;
+		position:relative;
+		top:-2px;
+		
+		figure{
+			margin-bottom:10px;
+			position:relative;
+			
+			.img-preview{
+				display: inline-block;
+				margin-bottom:10px;
+				position:relative;
+				
+				/******* For hover on image purpose *********/
+				span{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					display: block;
+					box-sizing: border-box;
+					
+					/******* Top and bottom lines *********/
+					&:nth-child(1){
+					  transform:rotate(0deg);
+					}
+
+					&:nth-child(2){
+					  transform:rotate(180deg);
+					}
+					
+					&:nth-child(1), &:nth-child(2){	
+						&:before{
+						  content: '';
+						  position: absolute;
+						  left:0;
+						  width:0;
+						  height: 4px;
+						  background: $second_color;
+						}
+					}
+					
+					/******* Right and left lines *********/
+					&:nth-child(3){
+					  transform:rotate(0deg);
+					}
+
+					&:nth-child(4){
+					  transform:rotate(180deg);
+					}
+					
+					&:nth-child(3), &:nth-child(4){	
+						&:before{
+						  content: '';
+						  position: absolute;
+						  left:0;
+						  width:4px;
+						  height: 0;
+						  background: $second_color;
+						}
+					}
+				}
+				
+				&:hover{
+					span{
+						
+						&:nth-child(1), &:nth-child(2){
+							&:before{
+							  animation: animate 4s linear infinite;
+							}
+						}
+						&:nth-child(3), &:nth-child(4){
+							&:before{
+							  animation: animateside 4s linear infinite;
+							}
+						}
+					}
+					
+					img:not(.loader){
+						box-shadow:$prim_color 2px 2px 4px;
+					}
+				}
+			}
+			
+			img:not(.loader){
+				border:2px solid $prim_color;
+				background:$prim_color;
+				border:$white 2px 2px 5px;
+				transition:all 0.3s;
+			}
+		}
+		
+		/******* Design for the form *********/
+		#strip-form{
+			display:flex;
+			justify-content:center;
+			margin-bottom:20px;
+			
+			input{
+				padding: 10px;
+				background: $fifth_color;
+				border: none;
+				border-bottom: 2px solid $prim_color;
+				margin-right:8px;
+			}
+		}
+		
+		/******* Design for buttons *********/
+		.btn{
+			display: inline-block;
+			cursor:pointer;
+			color:$white;
+			background:$fourth_color;
+			border:2px solid $prim_color;
+			transition:all 0.3s;
+			padding:8px 10px;
+			&:hover{
+				color: $prim_color;
+				background:$fifth_color;
+			}
+		}
+	
+		.titles h2{
+			margin-bottom:20px;
+		}
+		
+		.strip-part{
+			margin-bottom:30px;
+		}
+		
+		/******* Gallery list strip *********/
+		#gallery-strip #list-strip{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom:20px;
+			div{
+				width:33.3333333%;
+				padding:0 5px;
+			}
+		}
+	}
+}
+
+
+/******* Lightbox image *********/
+#modal-strip{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    background: rgba($black,0.75);
+    z-index: 999;
+	
+	figure{
+		position: absolute;
+		height: auto;
+		max-height: 100vh;
+		overflow-y: auto;
+		left: 50%;
+		top: 0%;
+		transform: translateX(-50%);
+		padding:15px 25px;
+		background:$black;
+		border:4px solid $white;
+		
+		figcaption{
+			color:$white;
+			margin-bottom:10px;
+		}
+		
+		#prev, #next{
+			background: rgba(0,0,0,0.5);
+			width: 25px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			cursor: pointer;
+			div{
+				position:absolute;
+				top:50%;
+				left:50%;
+				color:$white;
+				transform: translate(-50%,-50%);
+				transition: all .4s ease-out;
+				span{
+					display:block;
+					font-size:35px;
+					transition: all .4s ease-out;
+				}
+			}
+		}
+		
+		#prev{
+			left: 0;
+			&:hover{
+				div span{
+					transform: translateX(-3px);
+				}
+			}
+		}
+		
+		#next{
+			right: 0;
+			&:hover{
+				div span{
+					transform: translateX(3px);
+				}
+			}
+		}
+	}
+	
+	div.btn-close{
+		position: absolute;
+		height: 38px;
+		width: 40px;
+		top: 20px;
+		right: 20px;
+		font-size: 20px;
+		font-weight: bold;
+		cursor:pointer;
+		display: block;
+		padding-top: 4px;
+		padding-bottom: 0;
+		color: $prim_color;
+		background-color: $white;
+		text-align: center;
+		border-radius: 50%;
+		line-height: 24px;
+		transition: all .4s ease-out;
+		z-index: 99;
+		
+		&:hover{
+			color: $fourth_color;
+			transform: rotate(360deg);
+		}
+	}
+}
+
+
+/******* Responsive design part *********/
+@media all and (max-width: 768px){
+	/******* Main app style *********/
+	#stripapp{
+		
+		/******* Tabs content settings *********/
+		#tabs-content{
+			/******* Gallery list strip *********/
+			#gallery-strip #list-strip{
+				div{
+					width:50%;
+					padding:0 5px;
+				}
+			}
+			
+			/******* Design for the form *********/
+			#strip-form{
+
+				input{
+					padding: 4px;
+				}
+			}
+		}
+	}
+}
+
+
+/******* Animation parts *********/
+@keyframes animate {
+  0% {
+	transform:scaleX(0);
+	transform-origin: left;
+	width:0;
+  }
+  50%
+  {
+    transform:scaleX(1);
+	transform-origin: left;
+	width:100%;
+  }
+  50.1%
+  {
+    transform:scaleX(1);
+	transform-origin: right;
+  }
+  100%
+  {
+    transform:scaleX(0);
+	transform-origin: right;
+	width:0;
+  }
+}
+
+@keyframes animateside {
+  0% {
+	transform:scaleY(0);
+	transform-origin: left;
+	height:0;
+  }
+  50%
+  {
+    transform:scaleY(1);
+	transform-origin: left;
+	height:100%;
+  }
+  50.1%
+  {
+    transform:scaleY(1);
+	transform-origin: right;
+  }
+  100%
+  {
+    transform:scaleY(0);
+	transform-origin: right;
+	height:0;
+  }
+}
